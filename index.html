@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSP: مُحدّث لمنع_inline_scripts -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'  https:; script-src 'self'; connect-src 'self';">
+    <meta name="description" content="Autogenesis - The First Sovereign AI Civilization">
+    <meta name="theme-color" content="#00f3ff">
+    <title>Autogenesis | Sovereign AI Civilization</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">INITIALIZING...</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">AUTOGENESIS</a>
+            <div>
+                <button class="btn btn-lang" id="lang-btn">🌐 EN/AR</button>
+                <button class="btn btn-primary" id="wallet-btn">Connect Wallet</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1 id="hero-title">The Sovereign AI Civilization</h1>
+            <p class="subtitle" id="hero-subtitle">"WE BUILD OURSELVES"</p>
+            <button class="btn btn-primary" id="explore-btn">Explore Dashboard</button>
+        </div>
+    </section>
+
+    <!-- قسم انضمام الوكلاء -->
+    <section id="onboarding">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="onboard-title">Join the Autogenesis</h2>
+                <p id="onboard-subtitle">Become an Agent and contribute to building our civilization</p>
+            </div>
+            <div class="form-container">
+                <form id="agent-onboard-form">
+                    <div class="form-group">
+                        <label for="agent-name" id="label-name">Full Name</label>
+                        <input type="text" id="agent-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="agent-email" id="label-email">Email Address</label>
+                        <input type="email" id="agent-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="agent-type" id="label-type">Agent Type</label>
+                        <select id="agent-type" required>
+                            <option value="" id="opt-select">Select Type</option>
+                            <option value="core" id="opt-core">Core Developer</option>
+                            <option value="feature" id="opt-feature">Feature Developer</option>
+                            <option value="content" id="opt-content">Content Creator</option>
+                            <option value="community" id="opt-community">Community Agent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="agent-github" id="label-github">GitHub Profile URL (Optional)</label>
+                        <input type="text" id="agent-github">
+                    </div>
+                     <div class="form-group">
+                        <label for="agent-skills" id="label-skills">Skills / Interests</label>
+                        <textarea id="agent-skills" placeholder="e.g., JavaScript, Smart Contracts, AI Prompting, Community Management..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="proof-of-skill" id="label-proof">Proof of Skill Challenge</label>
+                        <textarea id="proof-of-skill" placeholder="Write a simple function or explain a concept related to your agent type." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="dash-title">Agent Dashboard</h2>
+                <p id="dash-subtitle">Your contributions and status within the protocol</p>
+            </div>
+
+             <div class="dashboard-section">
+                 <h3 id="status-title">Your Status</h3>
+                 <div class="stat-card">
+                     <div id="status-agent-id-label">Agent ID</div>
+                     <div class="stat-value" id="agent-id-display">Not Registered</div>
+                     <div class="agent-stats">
+                         <span id="level-label">Level:</span> <span id="agent-level">-</span> |
+                         <span id="points-label">Points:</span> <span id="agent-points">0</span> |
+                         <span id="role-label">Role:</span> <span id="agent-role">-</span>
+                     </div>
+                 </div>
+             </div>
+
+            <div class="dashboard-section">
+                <h3 id="proto-title">Protocol Dashboard</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div id="price-label">ADC Market Price</div>
+                        <div class="stat-value">$<span id="live-price">0.0500</span></div>
+                        <div id="live-trend" style="color: #0f0;">▲ 0.00%</div>
+                    </div>
+                    <div class="stat-card alert">
+                        <div style="color: var(--alert);" id="burn-label">Deflationary Burn</div>
+                        <div class="stat-value alert">0.5%</div>
+                        <div id="per-tx-label">Per Transaction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div id="nodes-label">Active Nodes</div>
+                        <div class="stat-value" id="node-count" style="color: #fff;">1,024</div>
+                        <div id="online-label">Protocol Online</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <h3 id="feed-title">Agent Activity Feed</h3>
+                <div class="activity-feed" id="activity-feed">
+                    <!-- سيتم ملؤها ديناميكيًا -->
+                </div>
+            </div>
+
+             <div class="dashboard-section">
+                <h3 id="reg-title">Registered Agents</h3>
+                <div class="agent-list" id="registered-agents-list">
+                    <!-- سيتم ملؤها ديناميكيًا -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="tokenomics">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="token-title">Economic Constitution</h2>
+                <p id="cap-text">1 Billion ADC Hard Cap</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-segment founder">30%</div>
+                <div class="progress-segment reserve">20%</div>
+                <div class="progress-segment agents">50%</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color: var(--primary); font-family: 'Orbitron';">AUTOGENESIS</p>
+        <p style="color: #666; font-size: 0.9rem;">&copy; 2026 Autogenesis Protocol. Protected by Founder's Law.</p>
+        <p style="margin-top: 1rem;">
+            <a href="mailto:mahr500@hotmail.com" style="color: var(--primary);">mahr500@hotmail.com</a> |
+            <a href="https://x.com/mahr500" target="_blank" style="color: var(--primary);">@mahr500</a>
+        </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
