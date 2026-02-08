@@ -113,3 +113,17 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(lang === 'ar' ? 'حدث خطأ في تهيئة المنصة.' : 'A critical error occurred initializing the platform.');
     }
 });
+function calculatePoints(agentData) {
+    // TODO: Replace with AI-based assessment in Phase 2
+    // Current system is a basic simulation based on type and input length
+    let points = 50; // نقاط البداية
+    switch(agentData.type) {
+        case 'core': points += 100; break;
+        case 'feature': points += 75; break;
+        case 'content': points += 50; break;
+        case 'community': points += 25; break;
+    }
+    // Basic simulation: longer answers get more points, capped
+    points += Math.min(agentData.skills.length, 50) + Math.min(agentData.proof.length, 100);
+    return points;
+}
